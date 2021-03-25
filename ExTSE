@@ -1,0 +1,51 @@
+public class ExTSE {
+
+	public static void main(String[] args) {
+		int opMesario = 0;
+		int opVoto = 0;
+		int totalVotosAngela = 1;
+		int totalVotosGean = 0;
+		int totalVotosCesar = 0;
+		int totalVotosNulos = 0;
+		int totalVotosEmBranco = 0;
+		
+		do {
+			opMesario = Integer.valueOf(JOptionPane.showInputDialog("Mesario: digite 1 para abrir uma nova votacao ou digite 2 para encerrar os votos"));
+			
+			if (opMesario == 1) {
+				opVoto = Integer.valueOf(JOptionPane.showInputDialog ("1 Nome: Angela Pepino Partido: PMDB - Código: 2 Nome: Gean da Silva Partido: PT - Código: 3 Nome: Cesar Souza Neto Partido: DEM -  Código: 4 Nome: Voto Nulo - Código: 5 Nome: Voto em Branco"));
+				if (opVoto ==1) {
+					totalVotosAngela++;	
+				}
+				else if (opVoto == 2) {
+					totalVotosGean++;
+				}
+				else if (opVoto == 3) {
+					totalVotosCesar++;
+				}
+				else if (opVoto == 4) {
+					totalVotosNulos++;
+				}
+				else if (opVoto == 5) {
+					totalVotosEmBranco++;
+				}
+				else {
+					System.out.println("Voto Invalido");
+				}
+			}
+			else if (opMesario == 2) {
+				System.out.println( "Eleicoes encerradas com sucesso!");
+			}
+			else {
+			System.out.println("Opcao Invalida");
+			}
+		} 
+		while (opMesario != 2);
+			System.out.println("Total de votos nas eleicoes:" + (totalVotosAngela+totalVotosGean+totalVotosCesar+totalVotosNulos+totalVotosEmBranco));
+			System.out.println("Votos da Angela:" + totalVotosAngela);
+			System.out.println("Votos da Gean:" + totalVotosGean);
+			System.out.println("Votos da Cesar:" + totalVotosCesar);
+			System.out.println("Votos Nulos:" + totalVotosNulos);
+			System.out.println("Votos Em Branco:" + totalVotosEmBranco);
+		}
+}
